@@ -1,0 +1,17 @@
+[
+    {
+        "users": ["user1", "admin"],
+        "messageList": [
+            {
+                "name": "Jonh Doe",
+                "message": "Hola, Admin!",
+                "date": "2021-01-01 14:53"
+            },
+            {
+                "name": "Admin User",
+                "message": "Hola, Jonh!",
+                "date": "2021-01-01 14:54"
+            }
+        ]
+    }
+]

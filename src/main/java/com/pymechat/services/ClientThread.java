@@ -5,9 +5,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-import com.pymechat.models.User;
-
-import javafx.application.Platform;
+import com.pymechat.models.Group;
+import com.pymechat.models.Message;
 
 public class ClientThread implements Runnable {
     public static AuthService auth = AuthService.getInstance();
@@ -30,16 +29,39 @@ public class ClientThread implements Runnable {
 
             // Leer el nombre del usuario
             userId = dataInput.readUTF();
+            userId = userId.replace("CONECTADO:", "");
             if (!servidor.agregarCliente(this)) {
                 enviarMensaje("El nombre de usuario ya está en uso.");
                 socket.close();
                 return;
             }
 
-            System.out.println(userId + " se ha conectado.");
             String mensaje;
             while ((mensaje = dataInput.readUTF()) != null) {
-                servidor.enviarMensajeATodos(userId + ": " + mensaje, this);
+                if (mensaje.startsWith("CONECTADO:")) {
+                    mensaje = mensaje.replace("CONECTADO:", "");
+                    servidor.notificarUsuariosConectados();
+                } else if (mensaje.startsWith("PIDE_GRUPOS")) {
+                    // Enviar la lista de grupos
+                    String grupos = "GRUPOS:";
+                    for (Group grupo : AppServidor.chat.getGroups()) {
+                        for (Message msg : grupo.getMessageList()) {
+                            grupos += grupo.getId() + ";;" + msg.getName() + ";;" + msg.getMessage() + "|";
+                        }
+                    }
+                    enviarMensaje(grupos);
+                } else if (mensaje.startsWith("AGREGAR_MENSAJE_A_GRUPO:")) {
+                    // Agregar mensaje a grupo
+                    String[] parts = mensaje.replace("AGREGAR_MENSAJE_A_GRUPO:", "").split("\\|");
+                    int groupId = Integer.parseInt(parts[0]);
+                    String[] messageParts = parts[1].split(";;");
+                    Message newMessage = new Message(messageParts[0], messageParts[1], messageParts[2]);
+                    AppServidor.chat.addMessageToGroup(groupId, newMessage);
+                    servidor.enviarMensajeATodos("AGREGAR_MENSAJE_A_GRUPO:" + groupId+"|"+ newMessage.getName() + ": " + newMessage.getMessage(), this);
+                }
+                else {
+                    servidor.enviarMensajeATodos(userId + ": " + mensaje, this);
+                }
             }
         } catch (IOException e) {
             System.out.println(userId + " se ha desconectado.");

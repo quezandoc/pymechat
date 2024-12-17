@@ -4,14 +4,11 @@ import java.io.IOException;
 import java.net.Socket;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.pymechat.models.Group;
-import com.pymechat.models.Message;
 import com.pymechat.models.User;
-import com.pymechat.services.ChatService;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -30,8 +27,8 @@ public class ChatController {
     private Map<String, StringBuilder> mensajesPorGrupo; // Historial de mensajes por grupo
     private Map<String, List<String>> usuariosPorGrupo;  // Lista de usuarios por grupo
     private int grupoActual;
-    public static ChatService chat = ChatService.getInstance();
     private User user;
+    ClientController clientController;
 
     @FXML
     private Button btnDirectMessage;
@@ -63,8 +60,7 @@ public class ChatController {
 
     public void initializeDependencies(Socket socket, User user) {
         this.user = user;
-        ClientController clientController = new ClientController(socket, user, this);
-        chat.loadGroups(); // Si necesitas cargar grupos
+        this.clientController = new ClientController(socket, user, this);
         if (user.getType().equals("Administrativo")) {
             cambiarGrupo(0, "Administrativos");
         } else if (user.getType().equals("Auxiliares")) {
@@ -72,11 +68,11 @@ public class ChatController {
         } else if (user.getType().equals("Emergencia")) {
             cambiarGrupo(5, "Emergencias");
         } else if (user.getType().equals("Medicos")) {
-            cambiarGrupo(2, "Medicos");
+            cambiarGrupo(2, "Médicos");
         } else if (user.getType().equals("Examenes")) {
             cambiarGrupo(4, "Exámenes");
         } else if (user.getType().equals("Pabellon")) {
-            cambiarGrupo(1, "Pabellon");
+            cambiarGrupo(1, "Pabellón");
         } else {
             cambiarGrupo(5, "Emergencia");
         }
@@ -85,18 +81,18 @@ public class ChatController {
     public void cambiarGrupo(int idGrupo, String nuevoGrupo) {
         grupoActual = idGrupo;
         chatTitle.setText(nuevoGrupo);
-        Group grupo = chat.getGroupByName(nuevoGrupo);
-        chatArea.getChildren().clear();
-        
-        List<Message> mensajes = grupo.getMessageList();
-        for (Message mensaje : mensajes) {
-            addTexto(mensaje.getName() +": "+mensaje.getMessage(), mensaje.getName().equals(this.user.getName()));
-        }
+        reloadChat();
     }
 
-    public void addActionListener(Runnable accion) {
-        sendButton.setOnAction(e -> accion.run());
-        messageInput.setOnAction(e -> accion.run());
+    public void reloadChat() {
+        chatArea.getChildren().clear();
+        ArrayList<String> mensajesGrupo = clientController.getGrupoById(grupoActual);
+        if (mensajesGrupo == null) {
+            mensajesGrupo = new ArrayList<>();
+        }
+        for (int i = 0; i < mensajesGrupo.size(); i++) {
+            addTexto(mensajesGrupo.get(i), false);
+        }
     }
 
     public void addTexto(String texto, boolean propio) {
@@ -121,7 +117,6 @@ public class ChatController {
     }
 
     public void updateUsuariosConectados(String[] usuarios) {
-        System.out.println("Usuarios conectados: " + Arrays.toString(usuarios));
         userList.getItems().setAll(usuarios);
     }
 
@@ -131,7 +126,7 @@ public class ChatController {
         LocalDateTime actualDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = actualDateTime.format(formatter);
-        // chat.addMessageToGroup(chat.getGroupByName(grupoActual).getId(), new Message(this.user.getName(), message, formattedDate)); // Cambiar a logica de servidor
+        clientController.sendToServer("AGREGAR_MENSAJE_A_GRUPO:"+grupoActual+"|"+user.getName()+";;"+message+";;"+formattedDate);
         addTexto(this.user.getName()+": " + message, true);
         messageInput.clear();
     }

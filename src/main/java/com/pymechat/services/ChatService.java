@@ -58,6 +58,8 @@ public class ChatService {
         if (group != null) {
             group.addMessage(message);
             saveGroups();
+            groups.clear();
+            loadGroups();
         } else {
             System.out.println("Group not found");
         }
@@ -69,6 +71,10 @@ public class ChatService {
         } else {
             return this.groups.get(groupId);
         }
+    }
+
+    public ArrayList<Group> getGroups() {
+        return this.groups;
     }
 
     private void saveGroups() {

@@ -82,9 +82,437 @@
                 "date": "2023-12-15 08:45"
             },
             {
+                "name": "User1",
+                "message": "Hola algun auxiliar disponible?",
+                "date": "16-12-2024 23:11:32"
+            },
+            {
                 "name": "User29",
-                "message": "Hola alguien disponible en el canal?",
-                "date": "16-12-2024 12:20:19"
+                "message": "Por aqui, auxiliar disponible que necesitaria User1",
+                "date": "16-12-2024 23:25:54"
+            },
+            {
+                "name": "User1",
+                "message": "Que venga al Box 3 por favor, es urgente",
+                "date": "16-12-2024 23:26:13"
+            },
+            {
+                "name": "User29",
+                "message": "Voy de inmediato",
+                "date": "16-12-2024 23:26:23"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Examenes",
+        "messageList": [
+            {
+                "name": "Pedro Silva",
+                "message": "¿El equipo de rayos X ya está calibrado? Hay varios pacientes en espera.",
+                "date": "2023-12-15 10:00"
+            },
+            {
+                "name": "Lucía García",
+                "message": "Lo terminé de calibrar hace una hora. Todo está listo.",
+                "date": "2023-12-15 10:10"
+            },
+            {
+                "name": "Admin User",
+                "message": "Recuerden registrar cualquier incidente en los equipos para su mantenimiento.",
+                "date": "2023-12-15 10:15"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Emergencias",
+        "messageList": [
+            {
+                "name": "Pedro Silva",
+                "message": "URGENTE MEDICO A LA SALA DE EMERGENCIAS",
+                "date": "2023-12-15 10:00"
+            },
+            {
+                "name": "Lucía García",
+                "message": "SE SOLICITA REFUERZO DE PERSONAL AUXILIAR EN SALA DE EMERGENCIA",
+                "date": "2023-12-15 10:10"
+            },
+            {
+                "name": "Admin User",
+                "message": "LIMPIEZA EN SALA DE EMERGENCIAS",
+                "date": "2023-12-15 10:15"
+            }
+        ]
+    },
+    {
+        "id": 0,
+        "name": "Administrativo",
+        "messageList": [
+            {
+                "name": "Maria Perez",
+                "message": "Buenos días, ¿alguien sabe cuándo se enviará el reporte mensual?",
+                "date": "2023-12-15 09:23"
+            },
+            {
+                "name": "Carlos López",
+                "message": "Hola Maria, el reporte estará listo para mañana. Lo reviso con el equipo hoy.",
+                "date": "2023-12-15 09:30"
+            },
+            {
+                "name": "Admin User",
+                "message": "Por favor, asegúrense de incluir los datos del último trimestre.",
+                "date": "2023-12-15 09:35"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Pabellon",
+        "messageList": [
+            {
+                "name": "Dr. Martinez",
+                "message": "¿Quién está encargado del pabellón 3 esta tarde?",
+                "date": "2023-12-15 12:15"
+            },
+            {
+                "name": "Enfermera López",
+                "message": "Yo estaré ahí, Dr. Martinez. ¿Hay algún procedimiento especial que deba preparar?",
+                "date": "2023-12-15 12:18"
+            },
+            {
+                "name": "Dr. Martinez",
+                "message": "Sí, tendremos una cirugía de emergencia. Necesito que el equipo esté preparado para las 2:00 PM.",
+                "date": "2023-12-15 12:20"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Medicos",
+        "messageList": [
+            {
+                "name": "Dr. Ramirez",
+                "message": "Buenas tardes, ¿quién puede cubrir mi turno este viernes?",
+                "date": "2023-12-14 16:45"
+            },
+            {
+                "name": "Dra. Castillo",
+                "message": "Yo puedo cubrirlo, pero necesitaré un cambio por el lunes.",
+                "date": "2023-12-14 16:50"
+            },
+            {
+                "name": "Admin User",
+                "message": "Confirmen el cambio en el sistema para que quede registrado, por favor.",
+                "date": "2023-12-14 16:55"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Auxiliares",
+        "messageList": [
+            {
+                "name": "Ana Torres",
+                "message": "¿Pudieron limpiar el área de emergencias después del turno nocturno?",
+                "date": "2023-12-15 08:30"
+            },
+            {
+                "name": "Luis Gomez",
+                "message": "Sí, todo está en orden. También repuse el material médico que faltaba.",
+                "date": "2023-12-15 08:40"
+            },
+            {
+                "name": "Admin User",
+                "message": "Gracias, Luis. Excelente trabajo. Ana, ¿puedes revisar el área de pediatría a mediodía?",
+                "date": "2023-12-15 08:45"
+            },
+            {
+                "name": "User1",
+                "message": "Hola algun auxiliar disponible?",
+                "date": "16-12-2024 23:11:32"
+            },
+            {
+                "name": "User29",
+                "message": "Por aqui, auxiliar disponible que necesitaria User1",
+                "date": "16-12-2024 23:25:54"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Examenes",
+        "messageList": [
+            {
+                "name": "Pedro Silva",
+                "message": "¿El equipo de rayos X ya está calibrado? Hay varios pacientes en espera.",
+                "date": "2023-12-15 10:00"
+            },
+            {
+                "name": "Lucía García",
+                "message": "Lo terminé de calibrar hace una hora. Todo está listo.",
+                "date": "2023-12-15 10:10"
+            },
+            {
+                "name": "Admin User",
+                "message": "Recuerden registrar cualquier incidente en los equipos para su mantenimiento.",
+                "date": "2023-12-15 10:15"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Emergencias",
+        "messageList": [
+            {
+                "name": "Pedro Silva",
+                "message": "URGENTE MEDICO A LA SALA DE EMERGENCIAS",
+                "date": "2023-12-15 10:00"
+            },
+            {
+                "name": "Lucía García",
+                "message": "SE SOLICITA REFUERZO DE PERSONAL AUXILIAR EN SALA DE EMERGENCIA",
+                "date": "2023-12-15 10:10"
+            },
+            {
+                "name": "Admin User",
+                "message": "LIMPIEZA EN SALA DE EMERGENCIAS",
+                "date": "2023-12-15 10:15"
+            }
+        ]
+    },
+    {
+        "id": 0,
+        "name": "Administrativo",
+        "messageList": [
+            {
+                "name": "Maria Perez",
+                "message": "Buenos días, ¿alguien sabe cuándo se enviará el reporte mensual?",
+                "date": "2023-12-15 09:23"
+            },
+            {
+                "name": "Carlos López",
+                "message": "Hola Maria, el reporte estará listo para mañana. Lo reviso con el equipo hoy.",
+                "date": "2023-12-15 09:30"
+            },
+            {
+                "name": "Admin User",
+                "message": "Por favor, asegúrense de incluir los datos del último trimestre.",
+                "date": "2023-12-15 09:35"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Pabellon",
+        "messageList": [
+            {
+                "name": "Dr. Martinez",
+                "message": "¿Quién está encargado del pabellón 3 esta tarde?",
+                "date": "2023-12-15 12:15"
+            },
+            {
+                "name": "Enfermera López",
+                "message": "Yo estaré ahí, Dr. Martinez. ¿Hay algún procedimiento especial que deba preparar?",
+                "date": "2023-12-15 12:18"
+            },
+            {
+                "name": "Dr. Martinez",
+                "message": "Sí, tendremos una cirugía de emergencia. Necesito que el equipo esté preparado para las 2:00 PM.",
+                "date": "2023-12-15 12:20"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Medicos",
+        "messageList": [
+            {
+                "name": "Dr. Ramirez",
+                "message": "Buenas tardes, ¿quién puede cubrir mi turno este viernes?",
+                "date": "2023-12-14 16:45"
+            },
+            {
+                "name": "Dra. Castillo",
+                "message": "Yo puedo cubrirlo, pero necesitaré un cambio por el lunes.",
+                "date": "2023-12-14 16:50"
+            },
+            {
+                "name": "Admin User",
+                "message": "Confirmen el cambio en el sistema para que quede registrado, por favor.",
+                "date": "2023-12-14 16:55"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Auxiliares",
+        "messageList": [
+            {
+                "name": "Ana Torres",
+                "message": "¿Pudieron limpiar el área de emergencias después del turno nocturno?",
+                "date": "2023-12-15 08:30"
+            },
+            {
+                "name": "Luis Gomez",
+                "message": "Sí, todo está en orden. También repuse el material médico que faltaba.",
+                "date": "2023-12-15 08:40"
+            },
+            {
+                "name": "Admin User",
+                "message": "Gracias, Luis. Excelente trabajo. Ana, ¿puedes revisar el área de pediatría a mediodía?",
+                "date": "2023-12-15 08:45"
+            },
+            {
+                "name": "User1",
+                "message": "Hola algun auxiliar disponible?",
+                "date": "16-12-2024 23:11:32"
+            },
+            {
+                "name": "User29",
+                "message": "Por aqui, auxiliar disponible que necesitaria User1",
+                "date": "16-12-2024 23:25:54"
+            },
+            {
+                "name": "User1",
+                "message": "Que venga al Box 3 por favor, es urgente",
+                "date": "16-12-2024 23:26:13"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Examenes",
+        "messageList": [
+            {
+                "name": "Pedro Silva",
+                "message": "¿El equipo de rayos X ya está calibrado? Hay varios pacientes en espera.",
+                "date": "2023-12-15 10:00"
+            },
+            {
+                "name": "Lucía García",
+                "message": "Lo terminé de calibrar hace una hora. Todo está listo.",
+                "date": "2023-12-15 10:10"
+            },
+            {
+                "name": "Admin User",
+                "message": "Recuerden registrar cualquier incidente en los equipos para su mantenimiento.",
+                "date": "2023-12-15 10:15"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Emergencias",
+        "messageList": [
+            {
+                "name": "Pedro Silva",
+                "message": "URGENTE MEDICO A LA SALA DE EMERGENCIAS",
+                "date": "2023-12-15 10:00"
+            },
+            {
+                "name": "Lucía García",
+                "message": "SE SOLICITA REFUERZO DE PERSONAL AUXILIAR EN SALA DE EMERGENCIA",
+                "date": "2023-12-15 10:10"
+            },
+            {
+                "name": "Admin User",
+                "message": "LIMPIEZA EN SALA DE EMERGENCIAS",
+                "date": "2023-12-15 10:15"
+            }
+        ]
+    },
+    {
+        "id": 0,
+        "name": "Administrativo",
+        "messageList": [
+            {
+                "name": "Maria Perez",
+                "message": "Buenos días, ¿alguien sabe cuándo se enviará el reporte mensual?",
+                "date": "2023-12-15 09:23"
+            },
+            {
+                "name": "Carlos López",
+                "message": "Hola Maria, el reporte estará listo para mañana. Lo reviso con el equipo hoy.",
+                "date": "2023-12-15 09:30"
+            },
+            {
+                "name": "Admin User",
+                "message": "Por favor, asegúrense de incluir los datos del último trimestre.",
+                "date": "2023-12-15 09:35"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Pabellon",
+        "messageList": [
+            {
+                "name": "Dr. Martinez",
+                "message": "¿Quién está encargado del pabellón 3 esta tarde?",
+                "date": "2023-12-15 12:15"
+            },
+            {
+                "name": "Enfermera López",
+                "message": "Yo estaré ahí, Dr. Martinez. ¿Hay algún procedimiento especial que deba preparar?",
+                "date": "2023-12-15 12:18"
+            },
+            {
+                "name": "Dr. Martinez",
+                "message": "Sí, tendremos una cirugía de emergencia. Necesito que el equipo esté preparado para las 2:00 PM.",
+                "date": "2023-12-15 12:20"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Medicos",
+        "messageList": [
+            {
+                "name": "Dr. Ramirez",
+                "message": "Buenas tardes, ¿quién puede cubrir mi turno este viernes?",
+                "date": "2023-12-14 16:45"
+            },
+            {
+                "name": "Dra. Castillo",
+                "message": "Yo puedo cubrirlo, pero necesitaré un cambio por el lunes.",
+                "date": "2023-12-14 16:50"
+            },
+            {
+                "name": "Admin User",
+                "message": "Confirmen el cambio en el sistema para que quede registrado, por favor.",
+                "date": "2023-12-14 16:55"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Auxiliares",
+        "messageList": [
+            {
+                "name": "Ana Torres",
+                "message": "¿Pudieron limpiar el área de emergencias después del turno nocturno?",
+                "date": "2023-12-15 08:30"
+            },
+            {
+                "name": "Luis Gomez",
+                "message": "Sí, todo está en orden. También repuse el material médico que faltaba.",
+                "date": "2023-12-15 08:40"
+            },
+            {
+                "name": "Admin User",
+                "message": "Gracias, Luis. Excelente trabajo. Ana, ¿puedes revisar el área de pediatría a mediodía?",
+                "date": "2023-12-15 08:45"
+            },
+            {
+                "name": "User1",
+                "message": "Hola algun auxiliar disponible?",
+                "date": "16-12-2024 23:11:32"
+            },
+            {
+                "name": "User29",
+                "message": "Por aqui, auxiliar disponible que necesitaria User1",
+                "date": "16-12-2024 23:25:54"
             }
         ]
     },

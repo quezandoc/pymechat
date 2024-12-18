@@ -28,6 +28,7 @@ public class ChatService {
     }
 
     public void loadGroups() {
+        groups.clear();
         String filePath = "data/groups.json";
         try (FileReader reader = new FileReader(filePath)) {
             Gson gson = new Gson();
@@ -38,7 +39,7 @@ public class ChatService {
             for (Group group : grupos) {
                 this.groups.add(group);
             }
-            System.out.println("Groups loaded");
+            System.out.println("Groups loaded" + this.groups.size());
         } catch (IOException e) {
             e.printStackTrace();
         }

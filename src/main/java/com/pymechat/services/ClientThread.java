@@ -57,7 +57,7 @@ public class ClientThread implements Runnable {
                     String[] messageParts = parts[1].split(";;");
                     Message newMessage = new Message(messageParts[0], messageParts[1], messageParts[2]);
                     AppServidor.chat.addMessageToGroup(groupId, newMessage);
-                    servidor.enviarMensajeATodos("AGREGAR_MENSAJE_A_GRUPO:" + groupId+"|"+ newMessage.getName() + ": " + newMessage.getMessage(), this);
+                    servidor.enviarMensajeATodos("RELOADCHATS", this);
                 }
                 else {
                     servidor.enviarMensajeATodos(userId + ": " + mensaje, this);

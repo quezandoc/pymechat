@@ -26,14 +26,6 @@ public class Group {
             this.name = name;
         }
 
-        public List<String> getWritePermissions() {
-            return writePermissions;
-        }
-
-        public void setWritePermissions(List<String> writePermissions) {
-            this.writePermissions = writePermissions;
-        }
-
         public List<Message> getMessageList() {
             return messageList;
         }

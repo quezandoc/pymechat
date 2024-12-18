@@ -1,0 +1,101 @@
+[
+    {
+        "type": "Medicos",
+        "read": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "write": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "direct": true
+    },
+    {
+        "type": "Auxiliares",
+        "read": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "write": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "direct": false
+    },
+    {
+        "type": "Administrativo",
+        "read": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "write": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "direct": true
+    },
+    {
+        "type": "Pabellon",
+        "read": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "write": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "direct": true
+    },
+    {
+        "type": "Examenes",
+        "read": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "write": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "direct": false
+    }
+]

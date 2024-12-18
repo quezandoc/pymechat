@@ -49,19 +49,15 @@ public class ClientController {
                     Platform.runLater(() -> chatController.updateUsuariosConectados(usuarios));
                 }
                 // Maneja la lista de grupos
-                if (texto.startsWith("GRUPOS:")) {
+                else if (texto.startsWith("GRUPOS:")) {
                     processGroups(texto);
                     Platform.runLater(() -> chatController.reloadChat());
                 }
-                if (texto.startsWith("AGREGAR_MENSAJE_A_GRUPO:")) {
-                    String[] parts = texto.replace("AGREGAR_MENSAJE_A_GRUPO:", "").split("\\|");
-                    int groupId = Integer.parseInt(parts[0]);
-                    String message = parts[1];
-                    // Agregar el mensaje al grupo correspondiente
-                    groups.get(groupId).add(message);
-                    if (groupId == chatController.getGrupoActual()) {
-                        Platform.runLater(() -> chatController.reloadChat());
-                    }
+                else if (texto.startsWith("RELOADCHATS")) {
+                    dataOutput.writeUTF("PIDE_GRUPOS");
+                }
+                else {
+                    System.out.println("Mensaje no reconocido: " + texto);
                 }
             }
         } catch (IOException e) {
